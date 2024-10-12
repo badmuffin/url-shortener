@@ -4,18 +4,21 @@ const URL = require("../models/url");
 async function handleGenerateNewShortUrl(req, res) {
   const body = req.body;
   if (!body.url) return res.status(400).json({ error: "required url" });
+
   const shortID = shortid(); // random id generator
   await URL.create({
     shortId: shortID,
     redirectURL: body.url,
     visitHistory: [],
+    createdBy: req.user._id,
   });
-  return res.render("home", { id: shortID });
+  return res.render("home", { id: shortID }); // locals in ejs
 }
 
 async function handleGetAnalytics(req, res) {
   const shortId = req.params.shortId; //coming from the url
   const result = await URL.findOne({ shortId }); // checks in the db
+
   return res.json({
     totalClicks: result.visitHistory.length,
     analytics: result.visitHistory,

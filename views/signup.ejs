@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <style>
+
+      label, input[type="text"],
+      [type="email"],
+      [type="password"] {
+        padding: 10px;
+        margin: 6px;
+        display: flex;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: 2px solid black;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hey There!</h1>
+    <form action="/user" method="post"> <!-- /user - for user route, check index file -->
+      <label>Full Name</label>
+      <input type="text" name="name" placeholder="John Doe" required />
+      <label>Email</label>
+      <input
+        type="text"
+        name="email"
+        placeholder="imjohn@example.com"
+        required
+      />
+      <label>Password</label>
+      <input type="text" name="password" required />
+
+      <button type="submit">Signup</button>
+    </form>
+  </body>
+</html>

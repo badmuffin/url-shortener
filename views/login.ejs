@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style> 
+    
+      label,
+      input[type="text"],
+      [type="email"],
+      [type="password"] {
+        padding: 10px;
+        margin: 6px;
+        display: flex;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: 2px solid black;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome Back!</h1>
+    <form action="/user/login" method="post">
+      <label>Email</label>
+      <input
+        type="text"
+        name="email"
+        placeholder="imjohn@example.com"
+        required
+      />
+      <label>Password</label>
+      <input type="text" name="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>
